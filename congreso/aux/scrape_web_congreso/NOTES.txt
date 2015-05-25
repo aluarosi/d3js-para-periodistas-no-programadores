@@ -1,0 +1,70 @@
+Notas scraping http://www.congreso.es/portal/page/portal/Congreso/Congreso/Diputados/Hemiciclo
+=============================================================================================
+
+Descargo página 2014/10/27
+
+En esta página web hay:
+- diagrama congreso (escaños)
+- información sobre los diputados y su asginación a escaños (asientos, con su numeración)
+
+En el código fuente (html):
+- <map> con varias <area> (1 para cada escaño)
+- <noscript> (código que sólo se muestra con javascipt desactivado)
+    * Con lista de <div> con info, fotos del diputado, y NUMERACIÓN del escaño
+
+-----------------
+REFERENCIAS scraping with Python
+----------------
+* http://docs.python-guide.org/en/latest/scenarios/scrape/
+
+
+------------------
+MUESTRAS CÓDIGO
+-----------------
+
+<div id="capaHemiciclo" class="capaHemiciclo" style="display:none;">                ^M
+            ^M
+    <div id="posiciones_dip"><img src="/wc/htdocs/web/img/hemiciclo/hemiciclo.gif"  alt='Imágen del hemiciclo' usemap="#hemiciclo" ></div>^M
+^M
+    ^M
+    <MAP name="hemiciclo">^M
+    ^M
+    ^M
+            <AREA SHAPE="circle" id="fotoHemi" ALT="Mato Adrover, Ana (Ministra de Sanidad, Servicios Sociales e Igualdad)" COORDS="189,241,5" href="/portal/page/portal/Congreso/Congreso/Diputados/BusqForm?_piref73_1333155_73_1333154_1333154.next_page=/wc/fichaDiputado&idDiputado=118" onmouseover="javascript:mostrarFotografiaHemiciclo( '/wc/htdocs/web/img/diputados/peq/118_10.jpg', '/wc/htdocs/web', 'Mato Adrover, Ana (Ministra de Sanidad, Servicios Sociales e Igualdad)', 'Diputada por Madrid', 'G.P. Popular' ,'','');" onmouseout="javascript:inicializarImagenesHemiciclo( '/wc/htdocs/web/img/diputados/blanco.gif', 'Pase el ratón por encima del escaño.', '' )" >^M
+            ^M
+              ^M
+        ^M
+
+...
+
+                    <div id="datosHemiciclo">^M
+                        <div class="fotoDiputado">^M
+                            <img src="/wc/htdocs/web/img/diputados/peq/20_10.jpg" onError="" alt="Barrero López, Jaime Javier (Vicepresidente Segundo)"/>^M
+                        </div>^M
+                        <div class="datosDiputado">^M
+                            <div class="nombreDiputado">^M
+                                ^M
+                                        <a href="/portal/page/portal/Congreso/Congreso/Diputados/BusqForm?_piref73_1333155_73_1333154_1333154.next_page=/wc/fichaDiputado&idDiputado=20&idLegislatura=10">Barrero López, Jaime Javier (Vicepresidente Segundo)</a>.^M
+                                ^M
+                            </div>^M
+                            ^M
+                                <div class="otrosDiputado">^M
+                                    Diputado por Huelva eoooooooo.^M
+                                </div>^M
+                            ^M
+                            ^M
+                                <div class="otrosDiputado">^M
+                                    G.P. Socialista.^M
+                                </div>^M
+                            ^M
+                            ^M
+                                ^M
+                                        <div class="otrosDiputado">^M
+                                            Asiento:3^M
+                                        </div>^M
+                                ^M
+                                ^M
+                            ^M
+                        </div>^M
+                    </div>^M
+

@@ -1,0 +1,10 @@
+* http://docs.python-guide.org/en/latest/scenarios/scrape/
+
+
+REQUISITES
+----------
+> sudo apt-get install libxml2-dev libxslt1-dev
+
+
+> pip install lxml
+
